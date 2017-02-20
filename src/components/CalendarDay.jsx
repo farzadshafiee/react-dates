@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import shallowCompare from 'react-addons-shallow-compare';
 import momentPropTypes from 'react-moment-proptypes';
-import moment from 'moment';
+import moment from '../utils/jalali-calendar';
 
 export const TOUCHSTART_TIMEOUT = 200;
 
@@ -97,7 +97,7 @@ export default class CalendarDay extends React.Component {
         onTouchStart={(e) => this.handleDayTouchStart(day, modifiers, e)}
         onTouchEnd={(e) => this.handleDayTouchEnd(day, modifiers, e)}
       >
-        <span className="CalendarDay__day">{day.format('D')}</span>
+        <span className="CalendarDay__day">{day.format('jD')}</span>
       </div>
     );
   }

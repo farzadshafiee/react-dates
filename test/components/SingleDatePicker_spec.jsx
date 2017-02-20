@@ -207,40 +207,6 @@ describe('SingleDatePicker', () => {
         wrapper.instance().onChange(customFormatDateString);
         expect(onDateChangeStub.callCount).to.equal(1);
       });
-
-      it('calls props.onDateChange with date as arg', () => {
-        const onDateChangeStub = sinon.stub();
-        const wrapper = shallow(<SingleDatePicker
-          id="date"
-          displayFormat={customFormat}
-          onDateChange={onDateChangeStub}
-        />);
-        wrapper.instance().onChange(customFormatDateString);
-        const formattedFirstArg = onDateChangeStub.getCall(0).args[0].format(customFormat);
-        expect(formattedFirstArg).to.equal(customFormatDateString);
-      });
-
-      it('calls props.onFocusChange once', () => {
-        const onFocusChangeStub = sinon.stub();
-        const wrapper = shallow(<SingleDatePicker
-          id="date"
-          displayFormat={customFormat}
-          onFocusChange={onFocusChangeStub}
-        />);
-        wrapper.instance().onChange(customFormatDateString);
-        expect(onFocusChangeStub.callCount).to.equal(1);
-      });
-
-      it('calls props.onFocusChange with { focused: false } as arg', () => {
-        const onFocusChangeStub = sinon.stub();
-        const wrapper = shallow(<SingleDatePicker
-          id="date"
-          displayFormat={customFormat}
-          onFocusChange={onFocusChangeStub}
-        />);
-        wrapper.instance().onChange(customFormatDateString);
-        expect(onFocusChangeStub.getCall(0).args[0].focused).to.equal(false);
-      });
     });
 
     describe('invalid date string', () => {

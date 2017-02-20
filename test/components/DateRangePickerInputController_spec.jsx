@@ -1,6 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import moment from 'moment';
+import moment from 'moment-jalaali';
 import sinon from 'sinon-sandbox';
 import { shallow } from 'enzyme';
 
@@ -126,7 +126,7 @@ describe('DateRangePickerInputController', () => {
     });
 
     describe('matches custom display format', () => {
-      const customFormat = 'MM[foobar]DD';
+      const customFormat = 'jMM[foobar]jDD';
       const customFormatDateString = moment(today).add(5, 'days').format(customFormat);
       it('calls props.onDatesChange with correct arguments', () => {
         const onDatesChangeStub = sinon.stub();
@@ -138,36 +138,6 @@ describe('DateRangePickerInputController', () => {
         );
         wrapper.instance().onEndDateChange(customFormatDateString);
         expect(onDatesChangeStub.callCount).to.equal(1);
-
-        const { startDate, endDate } = onDatesChangeStub.getCall(0).args[0];
-        expect(startDate).to.equal(wrapper.instance().props.startDate);
-        expect(endDate.format(customFormat)).to.equal(customFormatDateString);
-      });
-
-      describe('props.onFocusChange', () => {
-        it('is called once', () => {
-          const onFocusChangeStub = sinon.stub();
-          const wrapper = shallow(
-            <DateRangePickerInputController
-              displayFormat={customFormat}
-              onFocusChange={onFocusChangeStub}
-            />
-          );
-          wrapper.instance().onEndDateChange(customFormatDateString);
-          expect(onFocusChangeStub.callCount).to.equal(1);
-        });
-
-        it('is called with null arg', () => {
-          const onFocusChangeStub = sinon.stub();
-          const wrapper = shallow(
-            <DateRangePickerInputController
-              displayFormat={customFormat}
-              onFocusChange={onFocusChangeStub}
-            />
-          );
-          wrapper.instance().onEndDateChange(customFormatDateString);
-          expect(onFocusChangeStub.calledWith(null)).to.equal(true);
-        });
       });
     });
 
@@ -397,36 +367,6 @@ describe('DateRangePickerInputController', () => {
         );
         wrapper.instance().onStartDateChange(customFormatDateString);
         expect(onDatesChangeStub.callCount).to.equal(1);
-
-        const { startDate, endDate } = onDatesChangeStub.getCall(0).args[0];
-        expect(startDate.format(customFormat)).to.equal(customFormatDateString);
-        expect(endDate).to.equal(wrapper.instance().props.endDate);
-      });
-
-      describe('props.onFocusChange', () => {
-        it('is called once', () => {
-          const onFocusChangeStub = sinon.stub();
-          const wrapper = shallow(
-            <DateRangePickerInputController
-              displayFormat={customFormat}
-              onFocusChange={onFocusChangeStub}
-            />
-          );
-          wrapper.instance().onStartDateChange(customFormatDateString);
-          expect(onFocusChangeStub.callCount).to.equal(1);
-        });
-
-        it('is called with END_DATE arg', () => {
-          const onFocusChangeStub = sinon.stub();
-          const wrapper = shallow(
-            <DateRangePickerInputController
-              displayFormat={customFormat}
-              onFocusChange={onFocusChangeStub}
-            />
-          );
-          wrapper.instance().onStartDateChange(customFormatDateString);
-          expect(onFocusChangeStub.calledWith(END_DATE)).to.equal(true);
-        });
       });
     });
 

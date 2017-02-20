@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon-sandbox';
 import { shallow } from 'enzyme';
-import moment from 'moment';
+import moment from 'moment-jalaali';
 
 import CalendarDay, { TOUCHSTART_TIMEOUT } from '../../src/components/CalendarDay';
 
@@ -28,13 +28,13 @@ describe('CalendarDay', () => {
     it('contains formatted day for single digit days', () => {
       const firstOfMonth = moment().startOf('month');
       const wrapper = shallow(<CalendarDay day={firstOfMonth} />);
-      expect(wrapper.text()).to.equal(firstOfMonth.format('D'));
+      expect(wrapper.text()).to.equal(firstOfMonth.format('jD'));
     });
 
     it('contains formatted day for double digit days', () => {
       const lastOfMonth = moment().endOf('month');
       const wrapper = shallow(<CalendarDay day={lastOfMonth} />);
-      expect(wrapper.text()).to.equal(lastOfMonth.format('D'));
+      expect(wrapper.text()).to.equal(lastOfMonth.format('jD'));
     });
   });
 

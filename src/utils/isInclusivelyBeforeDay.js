@@ -1,5 +1,4 @@
-import moment from 'moment';
-
+import moment from './jalali-calendar';
 import isSameDay from './isSameDay';
 
 export default function isInclusivelyBeforeDay(a, b) {

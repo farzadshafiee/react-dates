@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
-import moment from 'moment';
 
 import momentPropTypes from 'react-moment-proptypes';
+
+import moment from '../utils/jalali-calendar';
 
 import DateRangePickerInput from './DateRangePickerInput';
 
@@ -74,7 +75,7 @@ const defaultProps = {
     clearDates: 'Clear Dates',
   },
 };
-
+moment.loadPersian();
 export default class DateRangePickerInputWithHandlers extends React.Component {
   constructor(props) {
     super(props);

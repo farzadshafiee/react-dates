@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
 import shallowCompare from 'react-addons-shallow-compare';
 import ReactDOM from 'react-dom';
-import moment from 'moment';
 import cx from 'classnames';
+
+import moment from '../utils/jalali-calendar';
 
 import OutsideClickHandler from './OutsideClickHandler';
 import CalendarMonthGrid from './CalendarMonthGrid';
@@ -13,6 +14,8 @@ import getTransformStyles from '../utils/getTransformStyles';
 import OrientationShape from '../shapes/OrientationShape';
 
 import { HORIZONTAL_ORIENTATION, VERTICAL_ORIENTATION } from '../../constants';
+
+moment.loadPersian();
 
 const CALENDAR_MONTH_WIDTH = 300;
 const DAY_PICKER_PADDING = 9;

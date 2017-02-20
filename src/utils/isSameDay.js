@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from './jalali-calendar';
 
 export default function isSameDay(a, b) {
   if (!moment.isMoment(a) || !moment.isMoment(b)) return false;

@@ -1,8 +1,9 @@
 import React from 'react';
-import moment from 'moment';
 import cx from 'classnames';
 import Portal from 'react-portal';
 import includes from 'array-includes';
+
+import moment from '../utils/jalali-calendar';
 
 import toMomentObject from '../utils/toMomentObject';
 import toLocalizedDateString from '../utils/toLocalizedDateString';

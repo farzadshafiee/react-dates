@@ -1,5 +1,7 @@
 # Change Log
 
+## v4.3.2
+ - [fix] Use Jalaali calendar as default and drop support for other locales.
 ## v4.3.0
  - [new] Add today modifier to the `SingleDatePicker` component ([#218](https://github.com/airbnb/react-dates/pull/218))
  - [fix] Fix week header alignment when `numberOfMonths` is greater than 2 ([#221](https://github.com/airbnb/react-dates/pull/221))

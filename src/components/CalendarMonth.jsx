@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 import momentPropTypes from 'react-moment-proptypes';
-import moment from 'moment';
 import cx from 'classnames';
+
+import moment from '../utils/jalali-calendar';
 
 import CalendarDay from './CalendarDay';
 
@@ -46,7 +47,7 @@ const defaultProps = {
   onDayTouchTap() {},
 
   // i18n
-  monthFormat: 'MMMM YYYY', // english locale
+  monthFormat: 'jMMMM jYYYY', // Jalai by default
 };
 
 export function getModifiersForDay(modifiers, day) {

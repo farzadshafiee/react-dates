@@ -53,7 +53,7 @@ describe('CalendarMonth', () => {
       it('text is the correctly formatted month title', () => {
         const MONTH = moment();
         const caption = shallow(<CalendarMonth month={MONTH} />).find('caption');
-        expect(caption.text()).to.equal(MONTH.format('MMMM YYYY'));
+        expect(caption.text()).to.equal(MONTH.format('jMMMM jYYYY'));
       });
     });
 

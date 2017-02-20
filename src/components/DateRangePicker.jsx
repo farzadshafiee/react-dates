@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import moment from 'moment';
 import cx from 'classnames';
 import Portal from 'react-portal';
+
+import moment from '../utils/jalali-calendar';
 
 import isTouchDevice from '../utils/isTouchDevice';
 import getResponsiveContainerStyles from '../utils/getResponsiveContainerStyles';
@@ -24,6 +25,8 @@ import {
   ANCHOR_LEFT,
   ANCHOR_RIGHT,
 } from '../../constants';
+
+moment.loadPersian();
 
 const propTypes = DateRangePickerShape;
 
@@ -59,7 +62,7 @@ const defaultProps = {
 
   // i18n
   displayFormat: () => moment.localeData().longDateFormat('L'),
-  monthFormat: 'MMMM YYYY',
+  monthFormat: 'jMMMM jYYYY',
   phrases: {
     closeDatePicker: 'Close',
     clearDates: 'Clear Dates',

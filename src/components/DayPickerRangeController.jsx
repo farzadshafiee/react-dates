@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 import momentPropTypes from 'react-moment-proptypes';
-import moment from 'moment';
 import includes from 'array-includes';
+
+import moment from '../utils/jalali-calendar';
 
 import isTouchDevice from '../utils/isTouchDevice';
 

@@ -2,8 +2,10 @@ import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import shallowCompare from 'react-addons-shallow-compare';
 import momentPropTypes from 'react-moment-proptypes';
-import moment from 'moment';
+
 import cx from 'classnames';
+
+import moment from '../utils/jalali-calendar';
 
 import CalendarMonth from './CalendarMonth';
 
@@ -57,7 +59,7 @@ const defaultProps = {
   transform: 'none',
 
   // i18n
-  monthFormat: 'MMMM YYYY', // english locale
+  monthFormat: 'jMMMM jYYYY', // Jalai by default
 };
 
 export default class CalendarMonthGrid extends React.Component {

@@ -1,5 +1,4 @@
-import moment from 'moment';
-
+import moment from 'moment-jalaali';
 import isSameDay from './isSameDay';
 
 export default function isNextDay(a, b) {
