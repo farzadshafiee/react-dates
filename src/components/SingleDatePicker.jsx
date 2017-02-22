@@ -61,7 +61,7 @@ const defaultProps = {
 
   // i18n
   displayFormat: () => moment.localeData().longDateFormat('L'),
-  monthFormat: 'MMMM YYYY',
+  monthFormat: 'jMMMM jYYYY',
   phrases: {
     closeDatePicker: 'Close',
     clearDate: 'Clear Date',

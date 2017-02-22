@@ -119,8 +119,7 @@ export default class CalendarMonthGrid extends React.Component {
       onMonthTransitionEnd,
     } = this.props;
 
-    let month = initialMonth.clone().subtract(1, 'month');
-
+    let month = initialMonth.clone().subtract(1, 'jMonth');
     const months = [];
     for (let i = 0; i < numberOfMonths + 2; i++) {
       const isVisible =
@@ -128,7 +127,7 @@ export default class CalendarMonthGrid extends React.Component {
 
       months.push(
         <CalendarMonth
-          key={month.format('MM-YY')}
+          key={month.format('jMM-jYY')}
           month={month}
           isVisible={isVisible}
           enableOutsideDays={enableOutsideDays}
@@ -145,7 +144,7 @@ export default class CalendarMonthGrid extends React.Component {
           onDayTouchTap={onDayTouchTap}
         />
       );
-      month = month.clone().add(1, 'month');
+      month = month.clone().add(1, 'jMonth');
     }
 
     const className = cx('CalendarMonthGrid', {

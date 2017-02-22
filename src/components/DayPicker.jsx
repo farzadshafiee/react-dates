@@ -77,7 +77,7 @@ const defaultProps = {
   onOutsideClick() {},
 
   // i18n
-  monthFormat: 'MMMM YYYY',
+  monthFormat: 'jMMMM jYYYY',
 };
 
 export default class DayPicker extends React.Component {
@@ -254,9 +254,9 @@ export default class DayPicker extends React.Component {
 
     let newMonth = currentMonth;
     if (monthTransition === PREV_TRANSITION) {
-      newMonth = currentMonth.clone().subtract(1, 'month');
+      newMonth = currentMonth.clone().subtract(1, 'jMonth');
     } else if (monthTransition === NEXT_TRANSITION) {
-      newMonth = currentMonth.clone().add(1, 'month');
+      newMonth = currentMonth.clone().add(1, 'jMonth');
     }
 
     // clear the previous transforms

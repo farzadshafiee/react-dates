@@ -77,7 +77,6 @@ export default function CalendarMonth(props) {
     'CalendarMonth--horizontal': orientation === HORIZONTAL_ORIENTATION,
     'CalendarMonth--vertical': orientation === VERTICAL_ORIENTATION,
   });
-
   return (
     <div className={calendarMonthClasses} data-visible={isVisible}>
       <table>
@@ -91,7 +90,7 @@ export default function CalendarMonth(props) {
               {week.map((day, j) => {
                 const modifiersForDay = getModifiersForDay(modifiers, day);
                 const className = cx('CalendarMonth__day', {
-                  'CalendarMonth__day--outside': !day || day.month() !== month.month(),
+                  'CalendarMonth__day--outside': !day || day.jMonth() !== month.jMonth(),
                 }, modifiersForDay.map(mod => `CalendarMonth__day--${mod}`));
 
                 return (

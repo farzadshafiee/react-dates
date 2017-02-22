@@ -16,7 +16,7 @@ export default function getCalendarMonthWeeks(month, enableOutsideDays) {
 
   while (currentDay < lastOfMonth) {
     currentWeek.push(currentDay.clone());
-    currentDay.add(1, 'd');
+    currentDay.add(1, 'day');
 
     if (currentDay.weekday() === 0) {
       weeksInMonth.push(currentWeek);
